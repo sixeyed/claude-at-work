@@ -1,0 +1,13 @@
+{
+  "name": "claude-at-work-skills",
+  "owner": {
+    "name": "Elton Stoneman"
+  },
+  "plugins": [
+    {
+      "name": "github-workflow",
+      "source": "./plugins/github-workflow",
+      "description": "GitHub development workflow skills: 'create-issue' turns a decision, task, or bug report into a well-formed GitHub issue; 'work-on-issue' picks up an issue, creates a branch, and implements it following repo conventions; 'create-pr' pushes the branch and opens a pull request linked to its issue. All skills act on the repo's git remote and never merge or push to main."
+    }
+  ]
+}

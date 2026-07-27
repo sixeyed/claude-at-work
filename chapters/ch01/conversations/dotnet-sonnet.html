@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conversation Transcript – 27 Apr 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f5f0e8;
+    color: #1a1610;
+    font-family: 'Lora', Georgia, serif;
+    min-height: 100vh;
+    padding: 2.5rem 1rem 4rem;
+  }
+
+  .page {
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  header {
+    border-top: 3px solid #1a1610;
+    border-bottom: 1px solid #1a1610;
+    padding: 1.2rem 0 1rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  header h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #6b5e4a;
+  }
+
+  header .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: #6b5e4a;
+  }
+
+  .turn { margin-bottom: 2rem; }
+
+  .turn-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .role-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    border-radius: 2px;
+  }
+
+  .role-user    { background: #1a1610; color: #f5f0e8; }
+  .role-claude  { background: #c8a96e; color: #1a1610; }
+
+  .timestamp {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: #9a8a74;
+  }
+
+  .bubble {
+    background: #fff;
+    border: 1px solid #d8cfc0;
+    border-radius: 3px;
+    padding: 1.1rem 1.3rem;
+    line-height: 1.8;
+    font-size: 0.92rem;
+    box-shadow: 2px 2px 0 #d0c8b8;
+  }
+
+  .turn-user   .bubble { border-left: 3px solid #1a1610; }
+  .turn-claude .bubble { border-left: 3px solid #c8a96e; }
+
+  .bubble p { margin-bottom: 0.7rem; }
+  .bubble p:last-child { margin-bottom: 0; }
+  .bubble strong { font-weight: 600; }
+  .bubble code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82em;
+    background: #f0ebe0;
+    padding: 0.1em 0.35em;
+    border-radius: 2px;
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #9a8a74;
+    margin: 1rem 0 0.35rem;
+    display: block;
+  }
+
+  .bubble ul {
+    margin: 0.2rem 0 0.8rem 1.25rem;
+  }
+  .bubble li { margin-bottom: 0.35rem; }
+
+  hr.divider {
+    border: none;
+    border-top: 1px dashed #c8bfb0;
+    margin: 2.2rem 0;
+  }
+
+  footer {
+    border-top: 1px solid #1a1610;
+    padding-top: 0.8rem;
+    margin-top: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: #9a8a74;
+    letter-spacing: 0.08em;
+    text-align: right;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Conversation Transcript</h1>
+    <span class="meta">27 Apr 2026 &nbsp;·&nbsp; Claude Sonnet 4.6</span>
+  </header>
+
+  <!-- Turn 1 -->
+  <div class="turn turn-user">
+    <div class="turn-header">
+      <span class="role-badge role-user">User</span>
+      <span class="timestamp">2026-04-27 &nbsp;09:00</span>
+    </div>
+    <div class="bubble">
+      <p>what's coming up in the next version of .net?</p>
+    </div>
+  </div>
+
+  <div class="turn turn-claude">
+    <div class="turn-header">
+      <span class="role-badge role-claude">Claude</span>
+      <span class="timestamp">2026-04-27 &nbsp;09:00</span>
+    </div>
+    <div class="bubble">
+      <p>The next version is <strong>.NET 11</strong>, currently in Preview 3. Here's what's coming:</p>
+
+      <span class="section-label">Release Timeline</span>
+      <p>It's a Standard Term Support (STS) version scheduled for final release in <strong>November 2026</strong>, with two years of support.</p>
+
+      <span class="section-label">Runtime &amp; Performance</span>
+      <ul>
+        <li><strong>Runtime-native async</strong> — cleaner stack traces and lower overhead. As of Preview 3, no longer requires opting in via a project flag for <code>net11.0</code> targets.</li>
+        <li><strong>JIT improvements</strong> — bounds check elimination, redundant checked context removal, switch expression folding, and new Arm SVE2 intrinsics.</li>
+        <li>Updated minimum hardware requirements for x86/x64 and Arm64, requiring more modern instruction sets.</li>
+      </ul>
+
+      <span class="section-label">WebAssembly &amp; Mobile</span>
+      <ul>
+        <li>CoreCLR becomes a target in the .NET WebAssembly SDK (used by some Blazor variants) and the <strong>default runtime for Android builds</strong>, furthering the goal of eliminating Mono dependencies.</li>
+        <li>WebAssembly improvements: WebCIL payload loading and better debugging symbols.</li>
+      </ul>
+
+      <span class="section-label">Libraries</span>
+      <ul>
+        <li>Native <strong>Zstandard compression</strong> support with improved performance.</li>
+      </ul>
+
+      <span class="section-label">C# 15</span>
+      <ul>
+        <li><strong>Collection expression arguments</strong> — lets you customise a collection at creation time, e.g. setting capacity or a custom comparer inline: <code>List&lt;string&gt; names = [with(capacity: values.Count * 2), .. values];</code></li>
+      </ul>
+
+      <span class="section-label">Community Reaction</span>
+      <p>Mixed so far. Early developer feedback has focused on concerns about C# syntax complexity and the framework's strategic emphasis on agentic AI over core framework polish.</p>
+
+      <p>Preview 3 is available to download now at dotnet.microsoft.com.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Turn 2 -->
+  <div class="turn turn-user">
+    <div class="turn-header">
+      <span class="role-badge role-user">User</span>
+      <span class="timestamp">2026-04-27 &nbsp;09:02</span>
+    </div>
+    <div class="bubble">
+      <p>can you capture this conversation in an artifact — with timestamps for the prompt and response</p>
+    </div>
+  </div>
+
+  <div class="turn turn-claude">
+    <div class="turn-header">
+      <span class="role-badge role-claude">Claude</span>
+      <span class="timestamp">2026-04-27 &nbsp;09:02</span>
+    </div>
+    <div class="bubble">
+      <p>Sure — rendered this transcript as a styled HTML artifact with approximate timestamps for each turn. You can download it above.</p>
+    </div>
+  </div>
+
+  <footer>End of transcript &nbsp;·&nbsp; 2 exchanges &nbsp;·&nbsp; 2026-04-27</footer>
+
+</div>
+</body>
+</html>

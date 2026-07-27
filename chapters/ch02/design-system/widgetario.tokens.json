@@ -1,0 +1,853 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "Widgetario design system tokens (DTCG 2025.10). Derived from the v3 home page design: a neo-brutalist 'tools for builders' aesthetic with chunky ink borders, hard offset shadows, and a warm yellow/cream palette.",
+  "primitive": {
+    "$description": "Raw, context-free values. The single source of truth. Do not reference these directly in product code\u2014use semantic or component tokens.",
+    "color": {
+      "$type": "color",
+      "yellow": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9882,
+            0.9255,
+            0.498
+          ],
+          "hex": "#fcec7f"
+        },
+        "$description": "Signature brand yellow. The dominant page surface."
+      },
+      "cream": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9961,
+            0.9765,
+            0.8471
+          ],
+          "hex": "#fef9d8"
+        },
+        "$description": "Pale cream. Header bar and soft surfaces."
+      },
+      "white": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "hex": "#ffffff"
+        },
+        "$description": "Pure white. Card surfaces."
+      },
+      "ink": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.102,
+            0.102,
+            0.102
+          ],
+          "hex": "#1a1a1a"
+        },
+        "$description": "Near-black. Borders, body text, footer."
+      },
+      "ink-soft": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3529,
+            0.3529,
+            0.3529
+          ],
+          "hex": "#5a5a5a"
+        },
+        "$description": "Muted gray. Secondary text and prices."
+      },
+      "pink": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9255,
+            0.4157,
+            0.6314
+          ],
+          "hex": "#ec6aa1"
+        },
+        "$description": "Brand magenta. Logo mark and 'sold out' status."
+      },
+      "pink-soft": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9529,
+            0.698,
+            0.8157
+          ],
+          "hex": "#f3b2d0"
+        },
+        "$description": "Soft pink tint. Alternate product-icon background."
+      },
+      "orange": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9294,
+            0.5922,
+            0.3098
+          ],
+          "hex": "#ed974f"
+        },
+        "$description": "Brand orange. Product-icon backgrounds and 'few left' status."
+      }
+    },
+    "dimension": {
+      "$type": "dimension",
+      "space": {
+        "$description": "4px-based spacing scale.",
+        "0": {
+          "$type": "dimension",
+          "$value": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "1": {
+          "$type": "dimension",
+          "$value": {
+            "value": 0.25,
+            "unit": "rem"
+          }
+        },
+        "2": {
+          "$type": "dimension",
+          "$value": {
+            "value": 0.5,
+            "unit": "rem"
+          }
+        },
+        "3": {
+          "$type": "dimension",
+          "$value": {
+            "value": 0.75,
+            "unit": "rem"
+          }
+        },
+        "4": {
+          "$type": "dimension",
+          "$value": {
+            "value": 1,
+            "unit": "rem"
+          }
+        },
+        "5": {
+          "$type": "dimension",
+          "$value": {
+            "value": 1.5,
+            "unit": "rem"
+          }
+        },
+        "6": {
+          "$type": "dimension",
+          "$value": {
+            "value": 2,
+            "unit": "rem"
+          }
+        },
+        "7": {
+          "$type": "dimension",
+          "$value": {
+            "value": 3,
+            "unit": "rem"
+          }
+        },
+        "8": {
+          "$type": "dimension",
+          "$value": {
+            "value": 4,
+            "unit": "rem"
+          }
+        }
+      },
+      "radius": {
+        "sm": {
+          "$type": "dimension",
+          "$value": {
+            "value": 8,
+            "unit": "px"
+          }
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": {
+            "value": 12,
+            "unit": "px"
+          }
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": {
+            "value": 16,
+            "unit": "px"
+          }
+        },
+        "xl": {
+          "$type": "dimension",
+          "$value": {
+            "value": 20,
+            "unit": "px"
+          }
+        },
+        "full": {
+          "$type": "dimension",
+          "$value": {
+            "value": 9999,
+            "unit": "px"
+          }
+        }
+      },
+      "border-width": {
+        "hairline": {
+          "$type": "dimension",
+          "$value": {
+            "value": 1,
+            "unit": "px"
+          }
+        },
+        "regular": {
+          "$type": "dimension",
+          "$value": {
+            "value": 3,
+            "unit": "px"
+          },
+          "$description": "Signature chunky stroke used across the system."
+        },
+        "bold": {
+          "$type": "dimension",
+          "$value": {
+            "value": 4,
+            "unit": "px"
+          }
+        }
+      },
+      "size": {
+        "icon-button": {
+          "$type": "dimension",
+          "$value": {
+            "value": 56,
+            "unit": "px"
+          },
+          "$description": "Square header toggle button."
+        },
+        "product-icon": {
+          "$type": "dimension",
+          "$value": {
+            "value": 64,
+            "unit": "px"
+          },
+          "$description": "Square product thumbnail tile."
+        },
+        "logo": {
+          "$type": "dimension",
+          "$value": {
+            "value": 56,
+            "unit": "px"
+          }
+        }
+      }
+    },
+    "typography": {
+      "family": {
+        "$type": "fontFamily",
+        "sans": {
+          "$type": "fontFamily",
+          "$value": [
+            "Archivo",
+            "Hanken Grotesk",
+            "Inter",
+            "system-ui",
+            "sans-serif"
+          ],
+          "$description": "Heavy geometric grotesque approximating the mockup's display face. Swap the first entry for a licensed face if desired."
+        }
+      },
+      "weight": {
+        "regular": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "medium": {
+          "$type": "fontWeight",
+          "$value": 500
+        },
+        "bold": {
+          "$type": "fontWeight",
+          "$value": 700
+        },
+        "black": {
+          "$type": "fontWeight",
+          "$value": 900,
+          "$description": "Used for display and product headings."
+        }
+      },
+      "size": {
+        "$type": "dimension",
+        "eyebrow": {
+          "$type": "dimension",
+          "$value": {
+            "value": 0.8125,
+            "unit": "rem"
+          }
+        },
+        "caption": {
+          "$type": "dimension",
+          "$value": {
+            "value": 0.875,
+            "unit": "rem"
+          }
+        },
+        "body": {
+          "$type": "dimension",
+          "$value": {
+            "value": 1,
+            "unit": "rem"
+          }
+        },
+        "body-lg": {
+          "$type": "dimension",
+          "$value": {
+            "value": 1.125,
+            "unit": "rem"
+          }
+        },
+        "h3": {
+          "$type": "dimension",
+          "$value": {
+            "value": 1.5,
+            "unit": "rem"
+          }
+        },
+        "h2": {
+          "$type": "dimension",
+          "$value": {
+            "value": 2,
+            "unit": "rem"
+          }
+        },
+        "display": {
+          "$type": "dimension",
+          "$value": {
+            "value": 3.5,
+            "unit": "rem"
+          },
+          "$description": "Hero headline ('Tools for builders.')."
+        }
+      },
+      "line-height": {
+        "$type": "number",
+        "tight": {
+          "$type": "number",
+          "$value": 1.05
+        },
+        "snug": {
+          "$type": "number",
+          "$value": 1.2
+        },
+        "normal": {
+          "$type": "number",
+          "$value": 1.5
+        }
+      },
+      "letter-spacing": {
+        "$type": "dimension",
+        "tight": {
+          "$type": "dimension",
+          "$value": {
+            "value": -0.02,
+            "unit": "rem"
+          }
+        },
+        "normal": {
+          "$type": "dimension",
+          "$value": {
+            "value": 0,
+            "unit": "rem"
+          }
+        },
+        "wide": {
+          "$type": "dimension",
+          "$value": {
+            "value": 0.06,
+            "unit": "rem"
+          },
+          "$description": "Uppercase eyebrows and badges."
+        }
+      }
+    },
+    "shadow": {
+      "$type": "shadow",
+      "offset-sm": {
+        "$type": "shadow",
+        "$value": {
+          "color": "{primitive.color.ink}",
+          "offsetX": {
+            "value": 2,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 2,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Hard offset shadow, no blur \u2014 the neo-brutalist signature."
+      },
+      "offset-md": {
+        "$type": "shadow",
+        "$value": {
+          "color": "{primitive.color.ink}",
+          "offsetX": {
+            "value": 4,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 4,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      },
+      "offset-lg": {
+        "$type": "shadow",
+        "$value": {
+          "color": "{primitive.color.ink}",
+          "offsetX": {
+            "value": 6,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 6,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      }
+    }
+  },
+  "semantic": {
+    "$description": "Intent-based tokens that reference primitives. This is the layer most product code should consume.",
+    "color": {
+      "background": {
+        "$type": "color",
+        "page": {
+          "$value": "{primitive.color.yellow}",
+          "$description": "Default page background."
+        },
+        "surface": {
+          "$value": "{primitive.color.cream}",
+          "$description": "Header and elevated bands."
+        },
+        "raised": {
+          "$value": "{primitive.color.white}",
+          "$description": "Cards and inputs."
+        },
+        "inverse": {
+          "$value": "{primitive.color.ink}",
+          "$description": "Footer and inverted regions."
+        }
+      },
+      "text": {
+        "$type": "color",
+        "primary": {
+          "$value": "{primitive.color.ink}"
+        },
+        "secondary": {
+          "$value": "{primitive.color.ink-soft}"
+        },
+        "inverse": {
+          "$value": "{primitive.color.cream}",
+          "$description": "Text on inverse backgrounds."
+        },
+        "accent": {
+          "$value": "{primitive.color.pink}"
+        }
+      },
+      "border": {
+        "$type": "color",
+        "default": {
+          "$value": "{primitive.color.ink}"
+        },
+        "subtle": {
+          "$value": "{primitive.color.ink-soft}"
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "primary": {
+          "$value": "{primitive.color.pink}"
+        },
+        "secondary": {
+          "$value": "{primitive.color.orange}"
+        }
+      },
+      "status": {
+        "in-stock": {
+          "$type": "color",
+          "background": {
+            "$value": "{primitive.color.ink}"
+          },
+          "text": {
+            "$value": "{primitive.color.yellow}"
+          }
+        },
+        "low-stock": {
+          "$type": "color",
+          "background": {
+            "$value": "{primitive.color.orange}"
+          },
+          "text": {
+            "$value": "{primitive.color.ink}"
+          }
+        },
+        "out-of-stock": {
+          "$type": "color",
+          "background": {
+            "$value": "{primitive.color.pink}"
+          },
+          "text": {
+            "$value": "{primitive.color.ink}"
+          }
+        }
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "control": {
+        "$value": "{primitive.dimension.radius.md}",
+        "$description": "Buttons, icons, inputs."
+      },
+      "container": {
+        "$value": "{primitive.dimension.radius.lg}",
+        "$description": "Cards and panels."
+      },
+      "pill": {
+        "$value": "{primitive.dimension.radius.full}"
+      }
+    },
+    "space": {
+      "$type": "dimension",
+      "inline-sm": {
+        "$value": "{primitive.dimension.space.2}"
+      },
+      "inline-md": {
+        "$value": "{primitive.dimension.space.4}"
+      },
+      "stack-sm": {
+        "$value": "{primitive.dimension.space.3}"
+      },
+      "stack-md": {
+        "$value": "{primitive.dimension.space.5}"
+      },
+      "section": {
+        "$value": "{primitive.dimension.space.7}"
+      }
+    },
+    "border": {
+      "default": {
+        "$type": "border",
+        "$value": {
+          "color": "{semantic.color.border.default}",
+          "width": "{primitive.dimension.border-width.regular}",
+          "style": "solid"
+        },
+        "$description": "The standard chunky outline."
+      }
+    },
+    "elevation": {
+      "$type": "shadow",
+      "rest": {
+        "$value": "{primitive.shadow.offset-sm}"
+      },
+      "raised": {
+        "$value": "{primitive.shadow.offset-md}"
+      },
+      "floating": {
+        "$value": "{primitive.shadow.offset-lg}"
+      }
+    },
+    "typography": {
+      "display": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{primitive.typography.family.sans}",
+          "fontSize": "{primitive.typography.size.display}",
+          "fontWeight": "{primitive.typography.weight.black}",
+          "lineHeight": "{primitive.typography.line-height.tight}",
+          "letterSpacing": "{primitive.typography.letter-spacing.tight}"
+        },
+        "$description": "Hero headline."
+      },
+      "heading": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{primitive.typography.family.sans}",
+          "fontSize": "{primitive.typography.size.h3}",
+          "fontWeight": "{primitive.typography.weight.black}",
+          "lineHeight": "{primitive.typography.line-height.snug}",
+          "letterSpacing": "{primitive.typography.letter-spacing.tight}"
+        },
+        "$description": "Card / product titles."
+      },
+      "body": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{primitive.typography.family.sans}",
+          "fontSize": "{primitive.typography.size.body}",
+          "fontWeight": "{primitive.typography.weight.regular}",
+          "lineHeight": "{primitive.typography.line-height.normal}",
+          "letterSpacing": "{primitive.typography.letter-spacing.normal}"
+        }
+      },
+      "caption": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{primitive.typography.family.sans}",
+          "fontSize": "{primitive.typography.size.caption}",
+          "fontWeight": "{primitive.typography.weight.medium}",
+          "lineHeight": "{primitive.typography.line-height.normal}",
+          "letterSpacing": "{primitive.typography.letter-spacing.normal}"
+        }
+      },
+      "eyebrow": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{primitive.typography.family.sans}",
+          "fontSize": "{primitive.typography.size.eyebrow}",
+          "fontWeight": "{primitive.typography.weight.bold}",
+          "lineHeight": "{primitive.typography.line-height.snug}",
+          "letterSpacing": "{primitive.typography.letter-spacing.wide}"
+        },
+        "$description": "Uppercase pill labels and badges."
+      }
+    }
+  },
+  "component": {
+    "$description": "Component-scoped tokens that reference semantic tokens. Tweak these to restyle a single component without touching the rest of the system.",
+    "header": {
+      "background": {
+        "$value": "{semantic.color.background.surface}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{semantic.border.default}",
+        "$type": "border"
+      },
+      "padding-block": {
+        "$value": "{primitive.dimension.space.4}",
+        "$type": "dimension"
+      },
+      "padding-inline": {
+        "$value": "{primitive.dimension.space.6}",
+        "$type": "dimension"
+      }
+    },
+    "icon-button": {
+      "size": {
+        "$value": "{primitive.dimension.size.icon-button}",
+        "$type": "dimension"
+      },
+      "background": {
+        "$value": "{semantic.color.background.surface}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{semantic.border.default}",
+        "$type": "border"
+      },
+      "radius": {
+        "$value": "{semantic.radius.control}",
+        "$type": "dimension"
+      }
+    },
+    "eyebrow-pill": {
+      "background": {
+        "$value": "{semantic.color.background.raised}",
+        "$type": "color"
+      },
+      "text": {
+        "$value": "{semantic.color.text.primary}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{semantic.border.default}",
+        "$type": "border"
+      },
+      "radius": {
+        "$value": "{semantic.radius.control}",
+        "$type": "dimension"
+      },
+      "padding-block": {
+        "$value": "{primitive.dimension.space.1}",
+        "$type": "dimension"
+      },
+      "padding-inline": {
+        "$value": "{primitive.dimension.space.3}",
+        "$type": "dimension"
+      },
+      "typography": {
+        "$value": "{semantic.typography.eyebrow}",
+        "$type": "typography"
+      }
+    },
+    "card": {
+      "background": {
+        "$value": "{semantic.color.background.raised}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{semantic.border.default}",
+        "$type": "border"
+      },
+      "radius": {
+        "$value": "{semantic.radius.container}",
+        "$type": "dimension"
+      },
+      "shadow": {
+        "$value": "{semantic.elevation.raised}",
+        "$type": "shadow"
+      },
+      "padding": {
+        "$value": "{primitive.dimension.space.4}",
+        "$type": "dimension"
+      },
+      "gap": {
+        "$value": "{primitive.dimension.space.4}",
+        "$type": "dimension"
+      }
+    },
+    "product-icon": {
+      "size": {
+        "$value": "{primitive.dimension.size.product-icon}",
+        "$type": "dimension"
+      },
+      "radius": {
+        "$value": "{semantic.radius.control}",
+        "$type": "dimension"
+      },
+      "border": {
+        "$value": "{semantic.border.default}",
+        "$type": "border"
+      },
+      "background-default": {
+        "$value": "{semantic.color.accent.secondary}",
+        "$type": "color",
+        "$description": "Orange tile (most products)."
+      },
+      "background-alt": {
+        "$value": "{primitive.color.pink-soft}",
+        "$type": "color",
+        "$description": "Soft-pink tile (e.g. Mars comms unit)."
+      }
+    },
+    "badge": {
+      "radius": {
+        "$value": "{semantic.radius.pill}",
+        "$type": "dimension"
+      },
+      "border": {
+        "$value": "{semantic.border.default}",
+        "$type": "border"
+      },
+      "padding-block": {
+        "$value": "{primitive.dimension.space.1}",
+        "$type": "dimension"
+      },
+      "padding-inline": {
+        "$value": "{primitive.dimension.space.3}",
+        "$type": "dimension"
+      },
+      "typography": {
+        "$value": "{semantic.typography.eyebrow}",
+        "$type": "typography"
+      },
+      "in-stock": {
+        "background": {
+          "$value": "{semantic.color.status.in-stock.background}",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{semantic.color.status.in-stock.text}",
+          "$type": "color"
+        }
+      },
+      "low-stock": {
+        "background": {
+          "$value": "{semantic.color.status.low-stock.background}",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{semantic.color.status.low-stock.text}",
+          "$type": "color"
+        }
+      },
+      "out-of-stock": {
+        "background": {
+          "$value": "{semantic.color.status.out-of-stock.background}",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{semantic.color.status.out-of-stock.text}",
+          "$type": "color"
+        }
+      }
+    },
+    "footer": {
+      "background": {
+        "$value": "{semantic.color.background.inverse}",
+        "$type": "color"
+      },
+      "text": {
+        "$value": "{semantic.color.text.inverse}",
+        "$type": "color"
+      },
+      "typography": {
+        "$value": "{semantic.typography.eyebrow}",
+        "$type": "typography"
+      },
+      "padding-block": {
+        "$value": "{primitive.dimension.space.5}",
+        "$type": "dimension"
+      }
+    }
+  }
+}

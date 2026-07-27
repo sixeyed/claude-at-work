@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Widgetario — Tools for builders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TOKENS — generated from widgetario.tokens.json (DTCG 2025.10)
+   Every rule below references these custom properties only.
+   ============================================================ */
+/* Widgetario design tokens -> CSS custom properties (generated from widgetario.tokens.json) */
+:root {
+  --primitive-color-yellow: #fcec7f;
+  --primitive-color-cream: #fef9d8;
+  --primitive-color-white: #ffffff;
+  --primitive-color-ink: #1a1a1a;
+  --primitive-color-ink-soft: #5a5a5a;
+  --primitive-color-pink: #ec6aa1;
+  --primitive-color-pink-soft: #f3b2d0;
+  --primitive-color-orange: #ed974f;
+  --primitive-dimension-space-0: 0px;
+  --primitive-dimension-space-1: 0.25rem;
+  --primitive-dimension-space-2: 0.5rem;
+  --primitive-dimension-space-3: 0.75rem;
+  --primitive-dimension-space-4: 1rem;
+  --primitive-dimension-space-5: 1.5rem;
+  --primitive-dimension-space-6: 2rem;
+  --primitive-dimension-space-7: 3rem;
+  --primitive-dimension-space-8: 4rem;
+  --primitive-dimension-radius-sm: 8px;
+  --primitive-dimension-radius-md: 12px;
+  --primitive-dimension-radius-lg: 16px;
+  --primitive-dimension-radius-xl: 20px;
+  --primitive-dimension-radius-full: 9999px;
+  --primitive-dimension-border-width-hairline: 1px;
+  --primitive-dimension-border-width-regular: 3px;
+  --primitive-dimension-border-width-bold: 4px;
+  --primitive-dimension-size-icon-button: 56px;
+  --primitive-dimension-size-product-icon: 64px;
+  --primitive-dimension-size-logo: 56px;
+  --primitive-typography-family-sans: Archivo, "Hanken Grotesk", Inter, system-ui, sans-serif;
+  --primitive-typography-weight-regular: 400;
+  --primitive-typography-weight-medium: 500;
+  --primitive-typography-weight-bold: 700;
+  --primitive-typography-weight-black: 900;
+  --primitive-typography-size-eyebrow: 0.8125rem;
+  --primitive-typography-size-caption: 0.875rem;
+  --primitive-typography-size-body: 1rem;
+  --primitive-typography-size-body-lg: 1.125rem;
+  --primitive-typography-size-h3: 1.5rem;
+  --primitive-typography-size-h2: 2rem;
+  --primitive-typography-size-display: 3.5rem;
+  --primitive-typography-line-height-tight: 1.05;
+  --primitive-typography-line-height-snug: 1.2;
+  --primitive-typography-line-height-normal: 1.5;
+  --primitive-typography-letter-spacing-tight: -0.02rem;
+  --primitive-typography-letter-spacing-normal: 0rem;
+  --primitive-typography-letter-spacing-wide: 0.06rem;
+  --primitive-shadow-offset-sm: 2px 2px 0px 0px #1a1a1a;
+  --primitive-shadow-offset-md: 4px 4px 0px 0px #1a1a1a;
+  --primitive-shadow-offset-lg: 6px 6px 0px 0px #1a1a1a;
+  --semantic-color-background-page: #fcec7f;
+  --semantic-color-background-surface: #fef9d8;
+  --semantic-color-background-raised: #ffffff;
+  --semantic-color-background-inverse: #1a1a1a;
+  --semantic-color-text-primary: #1a1a1a;
+  --semantic-color-text-secondary: #5a5a5a;
+  --semantic-color-text-inverse: #fef9d8;
+  --semantic-color-text-accent: #ec6aa1;
+  --semantic-color-border-default: #1a1a1a;
+  --semantic-color-border-subtle: #5a5a5a;
+  --semantic-color-accent-primary: #ec6aa1;
+  --semantic-color-accent-secondary: #ed974f;
+  --semantic-color-status-in-stock-background: #1a1a1a;
+  --semantic-color-status-in-stock-text: #fcec7f;
+  --semantic-color-status-low-stock-background: #ed974f;
+  --semantic-color-status-low-stock-text: #1a1a1a;
+  --semantic-color-status-out-of-stock-background: #ec6aa1;
+  --semantic-color-status-out-of-stock-text: #1a1a1a;
+  --semantic-radius-control: 12px;
+  --semantic-radius-container: 16px;
+  --semantic-radius-pill: 9999px;
+  --semantic-space-inline-sm: 0.5rem;
+  --semantic-space-inline-md: 1rem;
+  --semantic-space-stack-sm: 0.75rem;
+  --semantic-space-stack-md: 1.5rem;
+  --semantic-space-section: 3rem;
+  --semantic-border-default: 3px solid #1a1a1a;
+  --semantic-elevation-rest: 2px 2px 0px 0px #1a1a1a;
+  --semantic-elevation-raised: 4px 4px 0px 0px #1a1a1a;
+  --semantic-elevation-floating: 6px 6px 0px 0px #1a1a1a;
+  --semantic-typography-display-font-family: Archivo, "Hanken Grotesk", Inter, system-ui, sans-serif;
+  --semantic-typography-display-font-size: 3.5rem;
+  --semantic-typography-display-font-weight: 900;
+  --semantic-typography-display-line-height: 1.05;
+  --semantic-typography-display-letter-spacing: -0.02rem;
+  --semantic-typography-heading-font-family: Archivo, "Hanken Grotesk", Inter, system-ui, sans-serif;
+  --semantic-typography-heading-font-size: 1.5rem;
+  --semantic-typography-heading-font-weight: 900;
+  --semantic-typography-heading-line-height: 1.2;
+  --semantic-typography-heading-letter-spacing: -0.02rem;
+  --semantic-typography-body-font-family: Archivo, "Hanken Grotesk", Inter, system-ui, sans-serif;
+  --semantic-typography-body-font-size: 1rem;
+  --semantic-typography-body-font-weight: 400;
+  --semantic-typography-body-line-height: 1.5;
+  --semantic-typography-body-letter-spacing: 0rem;
+  --semantic-typography-caption-font-family: Archivo, "Hanken Grotesk", Inter, system-ui, sans-serif;
+  --semantic-typography-caption-font-size: 0.875rem;
+  --semantic-typography-caption-font-weight: 500;
+  --semantic-typography-caption-line-height: 1.5;
+  --semantic-typography-caption-letter-spacing: 0rem;
+  --semantic-typography-eyebrow-font-family: Archivo, "Hanken Grotesk", Inter, system-ui, sans-serif;
+  --semantic-typography-eyebrow-font-size: 0.8125rem;
+  --semantic-typography-eyebrow-font-weight: 700;
+  --semantic-typography-eyebrow-line-height: 1.2;
+  --semantic-typography-eyebrow-letter-spacing: 0.06rem;
+  --component-header-background: #fef9d8;
+  --component-header-border: 3px solid #1a1a1a;
+  --component-header-padding-block: 1rem;
+  --component-header-padding-inline: 2rem;
+  --component-icon-button-size: 56px;
+  --component-icon-button-background: #fef9d8;
+  --component-icon-button-border: 3px solid #1a1a1a;
+  --component-icon-button-radius: 12px;
+  --component-eyebrow-pill-background: #ffffff;
+  --component-eyebrow-pill-text: #1a1a1a;
+  --component-eyebrow-pill-border: 3px solid #1a1a1a;
+  --component-eyebrow-pill-radius: 12px;
+  --component-eyebrow-pill-padding-block: 0.25rem;
+  --component-eyebrow-pill-padding-inline: 0.75rem;
+  --component-eyebrow-pill-typography-font-family: Archivo, "Hanken Grotesk", Inter, system-ui, sans-serif;
+  --component-eyebrow-pill-typography-font-size: 0.8125rem;
+  --component-eyebrow-pill-typography-font-weight: 700;
+  --component-eyebrow-pill-typography-line-height: 1.2;
+  --component-eyebrow-pill-typography-letter-spacing: 0.06rem;
+  --component-card-background: #ffffff;
+  --component-card-border: 3px solid #1a1a1a;
+  --component-card-radius: 16px;
+  --component-card-shadow: 4px 4px 0px 0px #1a1a1a;
+  --component-card-padding: 1rem;
+  --component-card-gap: 1rem;
+  --component-product-icon-size: 64px;
+  --component-product-icon-radius: 12px;
+  --component-product-icon-border: 3px solid #1a1a1a;
+  --component-product-icon-background-default: #ed974f;
+  --component-product-icon-background-alt: #f3b2d0;
+  --component-badge-radius: 9999px;
+  --component-badge-border: 3px solid #1a1a1a;
+  --component-badge-padding-block: 0.25rem;
+  --component-badge-padding-inline: 0.75rem;
+  --component-badge-typography-font-family: Archivo, "Hanken Grotesk", Inter, system-ui, sans-serif;
+  --component-badge-typography-font-size: 0.8125rem;
+  --component-badge-typography-font-weight: 700;
+  --component-badge-typography-line-height: 1.2;
+  --component-badge-typography-letter-spacing: 0.06rem;
+  --component-badge-in-stock-background: #1a1a1a;
+  --component-badge-in-stock-text: #fcec7f;
+  --component-badge-low-stock-background: #ed974f;
+  --component-badge-low-stock-text: #1a1a1a;
+  --component-badge-out-of-stock-background: #ec6aa1;
+  --component-badge-out-of-stock-text: #1a1a1a;
+  --component-footer-background: #1a1a1a;
+  --component-footer-text: #fef9d8;
+  --component-footer-typography-font-family: Archivo, "Hanken Grotesk", Inter, system-ui, sans-serif;
+  --component-footer-typography-font-size: 0.8125rem;
+  --component-footer-typography-font-weight: 700;
+  --component-footer-typography-line-height: 1.2;
+  --component-footer-typography-letter-spacing: 0.06rem;
+  --component-footer-padding-block: 1.5rem;
+}
+
+/* ---------- reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--semantic-color-background-page);
+  color: var(--semantic-color-text-primary);
+  font-family: var(--semantic-typography-body-font-family);
+  font-size: var(--semantic-typography-body-font-size);
+  line-height: var(--semantic-typography-body-line-height);
+  -webkit-font-smoothing: antialiased;
+}
+svg { display: block; }
+
+/* ---------- header ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--component-header-background);
+  border-bottom: var(--component-header-border);
+  padding: var(--component-header-padding-block) var(--component-header-padding-inline);
+}
+.brand { display: flex; align-items: center; gap: var(--semantic-space-inline-md); }
+.brand__mark {
+  width: var(--primitive-dimension-size-logo);
+  height: var(--primitive-dimension-size-logo);
+  display: grid; place-items: center;
+  background: var(--semantic-color-accent-primary);
+  border: var(--semantic-border-default);
+  border-radius: var(--semantic-radius-control);
+  box-shadow: var(--semantic-elevation-rest);
+  color: var(--semantic-color-text-primary);
+}
+.brand__name {
+  font-family: var(--semantic-typography-heading-font-family);
+  font-weight: var(--primitive-typography-weight-black);
+  font-size: var(--primitive-typography-size-h2);
+  letter-spacing: var(--semantic-typography-heading-letter-spacing);
+  margin: 0;
+}
+.icon-button {
+  width: var(--component-icon-button-size);
+  height: var(--component-icon-button-size);
+  display: grid; place-items: center;
+  background: var(--component-icon-button-background);
+  border: var(--component-icon-button-border);
+  border-radius: var(--component-icon-button-radius);
+  box-shadow: var(--semantic-elevation-rest);
+  color: var(--semantic-color-text-primary);
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.icon-button:hover { transform: translate(-2px,-2px); box-shadow: var(--semantic-elevation-raised); }
+.icon-button:active { transform: translate(2px,2px); box-shadow: none; }
+.icon-button:focus-visible { outline: var(--primitive-dimension-border-width-regular) solid var(--semantic-color-accent-primary); outline-offset: 3px; }
+
+/* ---------- layout ---------- */
+.page { max-width: 1080px; margin: 0 auto; padding: var(--semantic-space-section) var(--primitive-dimension-space-6); }
+
+/* ---------- hero ---------- */
+.hero { margin-bottom: var(--primitive-dimension-space-7); }
+.eyebrow {
+  display: inline-block;
+  background: var(--component-eyebrow-pill-background);
+  color: var(--component-eyebrow-pill-text);
+  border: var(--component-eyebrow-pill-border);
+  border-radius: var(--component-eyebrow-pill-radius);
+  padding: var(--component-eyebrow-pill-padding-block) var(--component-eyebrow-pill-padding-inline);
+  font-family: var(--component-eyebrow-pill-typography-font-family);
+  font-size: var(--component-eyebrow-pill-typography-font-size);
+  font-weight: var(--component-eyebrow-pill-typography-font-weight);
+  line-height: var(--component-eyebrow-pill-typography-line-height);
+  letter-spacing: var(--component-eyebrow-pill-typography-letter-spacing);
+  text-transform: uppercase;
+}
+.hero__title {
+  font-family: var(--semantic-typography-display-font-family);
+  font-weight: var(--semantic-typography-display-font-weight);
+  font-size: clamp(2.5rem, 8vw, var(--semantic-typography-display-font-size));
+  line-height: var(--semantic-typography-display-line-height);
+  letter-spacing: var(--semantic-typography-display-letter-spacing);
+  margin: var(--primitive-dimension-space-4) 0 var(--primitive-dimension-space-2);
+}
+.hero__subtitle {
+  margin: 0;
+  color: var(--semantic-color-text-secondary);
+  font-size: var(--primitive-typography-size-body-lg);
+}
+
+/* ---------- product list ---------- */
+.products { display: flex; flex-direction: column; gap: var(--semantic-space-stack-md); list-style: none; padding: 0; margin: 0; }
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--component-card-gap);
+  background: var(--component-card-background);
+  border: var(--component-card-border);
+  border-radius: var(--component-card-radius);
+  box-shadow: var(--component-card-shadow);
+  padding: var(--component-card-padding);
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.card:hover { transform: translate(-2px,-2px); box-shadow: var(--semantic-elevation-floating); }
+.card:active { transform: translate(3px,3px); box-shadow: none; }
+.product-icon {
+  flex: none;
+  width: var(--component-product-icon-size);
+  height: var(--component-product-icon-size);
+  display: grid; place-items: center;
+  border: var(--component-product-icon-border);
+  border-radius: var(--component-product-icon-radius);
+  background: var(--component-product-icon-background-default);
+  color: var(--semantic-color-text-primary);
+}
+.product-icon--alt { background: var(--component-product-icon-background-alt); }
+.product-info { flex: 1 1 auto; min-width: 0; }
+.product-name {
+  font-family: var(--semantic-typography-heading-font-family);
+  font-weight: var(--semantic-typography-heading-font-weight);
+  font-size: var(--semantic-typography-heading-font-size);
+  letter-spacing: var(--semantic-typography-heading-letter-spacing);
+  line-height: var(--semantic-typography-heading-line-height);
+  margin: 0;
+}
+.product-price { margin: var(--primitive-dimension-space-1) 0 0; color: var(--semantic-color-text-secondary); }
+
+/* ---------- status badge ---------- */
+.badge {
+  flex: none;
+  border: var(--component-badge-border);
+  border-radius: var(--component-badge-radius);
+  padding: var(--component-badge-padding-block) var(--component-badge-padding-inline);
+  font-family: var(--component-badge-typography-font-family);
+  font-size: var(--component-badge-typography-font-size);
+  font-weight: var(--component-badge-typography-font-weight);
+  line-height: var(--component-badge-typography-line-height);
+  letter-spacing: var(--component-badge-typography-letter-spacing);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.badge--in-stock { background: var(--component-badge-in-stock-background); color: var(--component-badge-in-stock-text); }
+.badge--low-stock { background: var(--component-badge-low-stock-background); color: var(--component-badge-low-stock-text); }
+.badge--out-of-stock { background: var(--component-badge-out-of-stock-background); color: var(--component-badge-out-of-stock-text); }
+
+/* ---------- footer ---------- */
+.site-footer {
+  background: var(--component-footer-background);
+  color: var(--component-footer-text);
+  padding: var(--component-footer-padding-block) var(--primitive-dimension-space-6);
+  text-align: center;
+  font-family: var(--component-footer-typography-font-family);
+  font-size: var(--component-footer-typography-font-size);
+  font-weight: var(--component-footer-typography-font-weight);
+  letter-spacing: var(--component-footer-typography-letter-spacing);
+  text-transform: uppercase;
+}
+
+/* ---------- entrance animation ---------- */
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise .55s cubic-bezier(.2,.7,.2,1) both; }
+@media (prefers-reduced-motion: reduce) {
+  .rise { animation: none; }
+  .card, .icon-button { transition: none; }
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 560px) {
+  .card { flex-wrap: wrap; }
+  .badge { margin-left: calc(var(--component-product-icon-size) + var(--component-card-gap)); }
+  .site-header { padding-inline: var(--primitive-dimension-space-5); }
+}
+</style>
+</head>
+<body>
+  <header class="site-header rise">
+    <div class="brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3.2"/>
+          <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/>
+        </svg>
+      </span>
+      <h1 class="brand__name">Widgetario</h1>
+    </div>
+    <button class="icon-button" type="button" aria-label="Toggle theme">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4.2"/>
+        <path d="M12 1.5v2.5M12 20v2.5M3.5 12H1M23 12h-2.5M5 5l1.8 1.8M17.2 17.2 19 19M19 5l-1.8 1.8M6.8 17.2 5 19"/>
+      </svg>
+    </button>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <span class="eyebrow rise" style="animation-delay:.05s">Widgetario</span>
+      <h2 class="hero__title rise" style="animation-delay:.1s">Tools for builders.</h2>
+      <p class="hero__subtitle rise" style="animation-delay:.15s">Stocked, shipped, sorted.</p>
+    </section>
+
+    <ul class="products">
+      <li class="card rise" style="animation-delay:.2s">
+        <span class="product-icon" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6.5" y="6.5" width="11" height="11" rx="1.5"/><rect x="10" y="10" width="4" height="4" rx="0.5"/>
+            <path d="M9 6.5V4M12 6.5V4M15 6.5V4M9 20v-2.5M12 20v-2.5M15 20v-2.5M6.5 9H4M6.5 12H4M6.5 15H4M20 9h-2.5M20 12h-2.5M20 15h-2.5"/>
+          </svg>
+        </span>
+        <div class="product-info">
+          <h3 class="product-name">Arm64 SoC</h3>
+          <p class="product-price">$45.00</p>
+        </div>
+        <span class="badge badge--in-stock">In stock</span>
+      </li>
+
+      <li class="card rise" style="animation-delay:.27s">
+        <span class="product-icon" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v2.5"/><circle cx="12" cy="3" r="0.6" fill="currentColor"/>
+            <rect x="5" y="5.5" width="14" height="11" rx="2.5"/>
+            <circle cx="9.5" cy="11" r="1.3"/><circle cx="14.5" cy="11" r="1.3"/>
+            <path d="M9 19.5h6"/>
+          </svg>
+        </span>
+        <div class="product-info">
+          <h3 class="product-name">IoT breakout board</h3>
+          <p class="product-price">$12.00</p>
+        </div>
+        <span class="badge badge--low-stock">Few left</span>
+      </li>
+
+      <li class="card rise" style="animation-delay:.34s">
+        <span class="product-icon" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="5" width="14" height="14" rx="2"/>
+            <circle cx="9" cy="9" r="1"/><circle cx="12" cy="9" r="1"/><circle cx="15" cy="9" r="1"/>
+            <circle cx="9" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="15" cy="12" r="1"/>
+            <circle cx="9" cy="15" r="1"/><circle cx="12" cy="15" r="1"/><circle cx="15" cy="15" r="1"/>
+          </svg>
+        </span>
+        <div class="product-info">
+          <h3 class="product-name">DAC extension board</h3>
+          <p class="product-price">$23.00</p>
+        </div>
+        <span class="badge badge--in-stock">In stock</span>
+      </li>
+
+      <li class="card rise" style="animation-delay:.41s">
+        <span class="product-icon product-icon--alt" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 20a9 9 0 0 1 9-9"/><path d="M4 20a5.5 5.5 0 0 1 5.5-5.5"/>
+            <circle cx="15.5" cy="8.5" r="3.2"/><path d="M17.8 6.2 20.5 3.5"/>
+            <path d="M4 20h4"/>
+          </svg>
+        </span>
+        <div class="product-info">
+          <h3 class="product-name">Mars comms unit</h3>
+          <p class="product-price">$9000.00</p>
+        </div>
+        <span class="badge badge--out-of-stock">Sold out</span>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">© 2026 Widgetario · Stocked, shipped, sorted.</footer>
+</body>
+</html>
