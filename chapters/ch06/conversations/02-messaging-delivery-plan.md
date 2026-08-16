@@ -88,16 +88,16 @@ The delivery plan is drafted. Two things it settles that the approach plan left 
 
 Slice 1 is unavoidably the fattest since it carries the BDD harness; the plan suggests reviewing it as two commits.
 
-> **Elton rejected ExitPlanMode with:** *copy the plan to docs/plans/ch05/02-messaging-core-delivery-plan.md*
+> **Elton rejected ExitPlanMode with:** *copy the plan to docs/plans/ch06/02-messaging-core-delivery-plan.md*
 
 ---
 
 ## Assistant
 
-*(created `docs/plans/ch05/` and wrote the delivery plan there; updated the stored memory note
+*(created `docs/plans/ch06/` and wrote the delivery plan there; updated the stored memory note
 about where plans live to record the new chapter-folder layout)*
 
-Written to `docs/plans/ch05/02-messaging-core-delivery-plan.md` (new `ch05/` folder, untracked, uncommitted).
+Written to `docs/plans/ch06/02-messaging-core-delivery-plan.md` (new `ch06/` folder, untracked, uncommitted).
 
 The delivery plan breaks the approach into seven slices, each starting with its Gherkin and ending with something demoable in the browser:
 
@@ -124,7 +124,7 @@ I've also updated my memory note about plan locations to record the `docs/plans/
 
 ## User
 
-good. let's move docs/plans/260815-messaging-core-chat.md to docs/plans/ch05/01--messaging-core-approach-plan.md then save the transcript of this conversation to /Users/elton/scm/github/sixeyed/claude-at-work-public/chapters/ch06/conversations/02-messaging-delivery-plan.md
+good. let's move docs/plans/260815-messaging-core-chat.md to docs/plans/ch06/01--messaging-core-approach-plan.md then save the transcript of this conversation to /Users/elton/scm/github/sixeyed/claude-at-work-public/chapters/ch06/conversations/02-messaging-delivery-plan.md
 
 ---
 
@@ -152,7 +152,7 @@ actually let's go for 01-messaging-core-strategy-plan.md
 *(renamed the file again and swept the delivery plan, replacing the five prose references to
 "the approach plan" with "the strategy plan" so the wording matches the filename)*
 
-Renamed. `docs/plans/ch05/` now holds:
+Renamed. `docs/plans/ch06/` now holds:
 
 ```
 01-messaging-core-strategy-plan.md   the technical approach (from the previous session)

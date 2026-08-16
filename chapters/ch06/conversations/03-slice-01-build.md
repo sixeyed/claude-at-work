@@ -22,7 +22,7 @@ produced the seven-slice delivery plan being built from here.
 
 *(`/plan` — plan mode enabled)*
 
-docs/plans/ch05/02-messaging-core-delivery-plan.md - plan the first slice. we will implement from this so we need to confirm the delivery plan with the design and close any gaps.
+docs/plans/ch06/02-messaging-core-delivery-plan.md - plan the first slice. we will implement from this so we need to confirm the delivery plan with the design and close any gaps.
 
 ---
 
@@ -30,7 +30,7 @@ docs/plans/ch05/02-messaging-core-delivery-plan.md - plan the first slice. we wi
 
 I'll start by reading the delivery plan and exploring the related design docs and existing code.
 
-*(read the delivery plan in full and listed `docs/plans/ch05/`, `docs/design/` and `docs/adr/`)*
+*(read the delivery plan in full and listed `docs/plans/ch06/`, `docs/design/` and `docs/adr/`)*
 
 ---
 
@@ -79,7 +79,7 @@ record the ADRs in slice 1 · **generate** the clients from OpenAPI.
 
 *(rejected the plan-mode exit)*
 
-save the plan in docs/plans/ch05/03-slice-01-implementation-plan.md
+save the plan in docs/plans/ch06/03-slice-01-implementation-plan.md
 
 ---
 
@@ -87,7 +87,7 @@ save the plan in docs/plans/ch05/03-slice-01-implementation-plan.md
 
 *(wrote the plan to the repo instead)*
 
-Saved to `docs/plans/ch05/03-slice-01-implementation-plan.md`.
+Saved to `docs/plans/ch06/03-slice-01-implementation-plan.md`.
 
 Validating the delivery plan against `docs/design/00`, `02`, `06` and `07` turned up nine gaps. The four you settled:
 
@@ -699,7 +699,7 @@ Within my 9.8 minutes:
 - **3:16–4:06** — agents reported; reconciled their findings against my own reading
 - **5:58** — `AskUserQuestion` (four decisions) → **72s** waiting on you
 - **9:29** — wrote the plan (72s of generation), called `ExitPlanMode` → **160s** waiting, and you rejected it
-- **13:12** — rewrote the plan to `docs/plans/ch05/` (56s)
+- **13:12** — rewrote the plan to `docs/plans/ch06/` (56s)
 
 **The rest of the session**, since the timestamps make it easy:
 

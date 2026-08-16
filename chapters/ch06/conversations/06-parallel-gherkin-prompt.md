@@ -27,13 +27,13 @@ stop at the approval gate. This session is about doing that step five times at o
 
 *(plan mode was already enabled)*
 
-docs/plans/ch05 - we have implemented slice 1 and the rest are planned. could we do the first stage of each plan in parallel, using subagents to generate the gherkin files but telling them to stop there?
+docs/plans/ch06 - we have implemented slice 1 and the rest are planned. could we do the first stage of each plan in parallel, using subagents to generate the gherkin files but telling them to stop there?
 
 ---
 
 ## Assistant
 
-I'll explore the ch05 plans first to understand their structure.
+I'll explore the ch06 plans first to understand their structure.
 
 *(read `prompts/parallel-slices.md` in full — the 369-line prompt that produced the six plans — then pulled the `## How the slice runs` section out of each of the six new plans with `awk`, read the existing `tests/bdd/features/channels.feature`, listed the headings of `04-slice-contracts.md` and read ruling 6 "BDD harness growth", read the `### A.` BDD work package from four of the plans, and read `pyproject.toml`'s pytest config and the head of `tests/bdd/steps/test_channel_steps.py`)*
 
@@ -52,7 +52,7 @@ Four facts came out of that, and they shaped everything after:
 
 ## User
 
-write me a prompt to do this for me, similar to docs/plans/ch05/prompts/parallel-slices.md - the leas agent has the subagents build gherkin files to a staging folder, then it consolidates them to the proper files in tests/bdd/features
+write me a prompt to do this for me, similar to docs/plans/ch06/prompts/parallel-slices.md - the leas agent has the subagents build gherkin files to a staging folder, then it consolidates them to the proper files in tests/bdd/features
 
 ---
 
@@ -86,7 +86,7 @@ Good — that resolves the `channels.feature` concern: S2 being next means those
 
 ## Assistant
 
-*(wrote `docs/plans/ch05/prompts/parallel-gherkin.md` — the framing section outside the fence, the whole coordinator prompt inside it)*
+*(wrote `docs/plans/ch06/prompts/parallel-gherkin.md` — the framing section outside the fence, the whole coordinator prompt inside it)*
 
 The document tells the coordinator three things about the harness before it does anything, because they decide the whole run:
 
@@ -102,13 +102,13 @@ The document tells the coordinator three things about the harness before it does
 
 *(checked the output: line lengths, fence balance, `git status`; compared the over-100-column lines against `parallel-slices.md` and `04-slice-contracts.md` and found long table rows are normal house style there; then verified every line reference the prompt cites — `channels.feature:55`, `pyproject.toml:69`, `_COMPLAINTS` at `test_channel_steps.py:29` all checked out, but the `scenarios()` call is at line 26, not 27, and that got corrected)*
 
-Written: **`docs/plans/ch05/prompts/parallel-gherkin.md`** — the only change, untracked, nothing committed.
+Written: **`docs/plans/ch06/prompts/parallel-gherkin.md`** — the only change, untracked, nothing committed.
 
 It's a sibling to `parallel-slices.md`: framing outside the fence, the whole coordinator prompt inside it. Seven subagents in three waves.
 
 **Shape**
 
-- **Phase 1** — you write `docs/plans/ch05/gherkin/00-scenario-vocabulary.md` before dispatching anything. It's `04-slice-contracts.md` for prose: personas, the step phrases already in `test_channel_steps.py` quoted verbatim, one `Background` and one narrative paragraph per file owned by the slice that creates it, `@bdd` only, and a collected list of everything the five plans sent to integration level so no writer relitigates it.
+- **Phase 1** — you write `docs/plans/ch06/gherkin/00-scenario-vocabulary.md` before dispatching anything. It's `04-slice-contracts.md` for prose: personas, the step phrases already in `test_channel_steps.py` quoted verbatim, one `Background` and one narrative paragraph per file owned by the slice that creates it, `@bdd` only, and a collected list of everything the five plans sent to integration level so no writer relitigates it.
 - **Phase 2** — writers 2, 3, 5 in parallel (the slices that *create* their files), each to its own staging file.
 - **Phase 3** — writers 4 and 6 in parallel, each reading its upstream draft so S4 matches S3's wording and S6 matches S5's. Their drafts carry a `Feature:` header so they parse standalone; the coordinator strips it.
 - **Phase 4** — coordinator consolidates into `tests/bdd/features/`, rules on Contract questions, and treats two spellings of one step as a defect to fix, not a merge conflict.

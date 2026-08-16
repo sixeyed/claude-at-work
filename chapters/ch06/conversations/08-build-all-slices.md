@@ -31,7 +31,7 @@ scenarios were waiting for. Slice 1 was built in
 
 *(`/clear` — context cleared before starting)*
 
-docs/plans/ch05 - we have built slice 1 and the gherkin files are all built and reviewed for the remaining slices. go ahead and finish the build, running implementation plans 02 to 07 in sequence. /goal complete the feature set in line with the ch05 deliver and strategy plans.
+docs/plans/ch06 - we have built slice 1 and the gherkin files are all built and reviewed for the remaining slices. go ahead and finish the build, running implementation plans 02 to 07 in sequence. /goal complete the feature set in line with the ch06 deliver and strategy plans.
 
 ---
 
@@ -39,7 +39,7 @@ docs/plans/ch05 - we have built slice 1 and the gherkin files are all built and 
 
 I'll start by reading the plans and understanding the current state.
 
-*(listed `docs/plans/ch05/` — ten plan documents, a `gherkin/` folder and a `prompts/` folder —
+*(listed `docs/plans/ch06/` — ten plan documents, a `gherkin/` folder and a `prompts/` folder —
 then invoked `superpowers:executing-plans` and read the delivery plan in full)*
 
 ---
@@ -119,7 +119,7 @@ the one-way archive rule, the three membership DTOs in §3.1.3, and the `version
 The final gate turned up something that was not mine.
 
 `uv run ruff format --check .` wanted to reformat a Python snippet **inside a Markdown code
-block** in one of the ch05 plan documents — ruff 0.16 formats embedded code now. Excluding
+block** in one of the ch06 plan documents — ruff 0.16 formats embedded code now. Excluding
 `docs/` from ruff fixed that and immediately broke something else: five `I001` import-order
 failures appeared in `src/services/auth/tests/`.
 

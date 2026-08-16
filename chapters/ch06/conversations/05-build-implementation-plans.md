@@ -39,10 +39,10 @@ write the plans; three more review them.
 Nothing below happens until you have read:
 
 - `CLAUDE.md` — the repo rules the plans keep citing.
-- `docs/plans/ch05/01-messaging-core-strategy-plan.md` — reference points and idiom to copy.
-- `docs/plans/ch05/02-messaging-core-delivery-plan.md` — the seven slices, the shared protocol,
+- `docs/plans/ch06/01-messaging-core-strategy-plan.md` — reference points and idiom to copy.
+- `docs/plans/ch06/02-messaging-core-delivery-plan.md` — the seven slices, the shared protocol,
   the amendment block dated 2026-08-15, and the two decisions at the top.
-- `docs/plans/ch05/03-slice-01-implementation-plan.md` — **the shape every plan you commission
+- `docs/plans/ch06/03-slice-01-implementation-plan.md` — **the shape every plan you commission
   must match.**
 - `docs/design/00-platform-conventions.md`, `02-messaging-service.md`, `06-frontend-spa.md`,
   `07-open-decisions-register.md`.
@@ -63,13 +63,13 @@ section.
 
 | File | Written by |
 |---|---|
-| `docs/plans/ch05/04-slice-contracts.md` | You, in Phase 1 |
-| `docs/plans/ch05/05-slice-02-implementation-plan.md` | Planner 2 |
-| `docs/plans/ch05/06-slice-03-implementation-plan.md` | Planner 3 |
-| `docs/plans/ch05/07-slice-04-implementation-plan.md` | Planner 4 |
-| `docs/plans/ch05/08-slice-05-implementation-plan.md` | Planner 5 |
-| `docs/plans/ch05/09-slice-06-implementation-plan.md` | Planner 6 |
-| `docs/plans/ch05/10-slice-07-implementation-plan.md` | Planner 7 |
+| `docs/plans/ch06/04-slice-contracts.md` | You, in Phase 1 |
+| `docs/plans/ch06/05-slice-02-implementation-plan.md` | Planner 2 |
+| `docs/plans/ch06/06-slice-03-implementation-plan.md` | Planner 3 |
+| `docs/plans/ch06/07-slice-04-implementation-plan.md` | Planner 4 |
+| `docs/plans/ch06/08-slice-05-implementation-plan.md` | Planner 5 |
+| `docs/plans/ch06/09-slice-06-implementation-plan.md` | Planner 6 |
+| `docs/plans/ch06/10-slice-07-implementation-plan.md` | Planner 7 |
 
 Sequence-prefixed, continuing `01`/`02`/`03`. Nothing else in the repo changes.
 
@@ -77,7 +77,7 @@ Sequence-prefixed, continuing `01`/`02`/`03`. Nothing else in the repo changes.
 
 ## Phase 1 — freeze the seams
 
-Do this yourself, before dispatching anything. Write `docs/plans/ch05/04-slice-contracts.md`.
+Do this yourself, before dispatching anything. Write `docs/plans/ch06/04-slice-contracts.md`.
 
 Six planners working blind will close the same gap two different ways wherever slices touch. This
 document is the answer, and it is the reason the fan-out is safe. It is not a summary of the
@@ -129,7 +129,7 @@ overturn it, once, and say which. Where nothing does, decide it and record why.
 11. **Branch names.** `feature/messaging-s2-admin` · `-s3-messages` · `-s4-edit-delete` ·
     `-s5-realtime` · `-s6-socket-write` · `-s7-decisions`.
 
-Write it in the house style of the other ch05 documents: sentence-case title, `## Context` first,
+Write it in the house style of the other ch06 documents: sentence-case title, `## Context` first,
 `---` between sections, ~100-column wrap, `·` as an inline separator, the 🔴🟡🟢 statuses used the
 way the register uses them.
 
@@ -150,7 +150,7 @@ Use this prompt for each, substituting the placeholders:
 You are writing ONE implementation plan: Slice {{N}} of the CollabHub messaging build,
 "{{TITLE}}".
 
-Write it to `docs/plans/ch05/{{OUTPUT_PATH}}` and to no other file. Everything else in the
+Write it to `docs/plans/ch06/{{OUTPUT_PATH}}` and to no other file. Everything else in the
 repository is read-only to you.
 
 ## What this plan is for
@@ -168,14 +168,14 @@ the delivery plan. Your plan does two things, in this order:
 
 ## Read
 
-- `docs/plans/ch05/04-slice-contracts.md` — **the frozen cross-slice rulings. Binding.** Where it
+- `docs/plans/ch06/04-slice-contracts.md` — **the frozen cross-slice rulings. Binding.** Where it
   rules on something your slice touches, follow it and cite it; do not re-decide it.
-- `docs/plans/ch05/02-messaging-core-delivery-plan.md` — read the whole thing (the amendment
+- `docs/plans/ch06/02-messaging-core-delivery-plan.md` — read the whole thing (the amendment
   blockquote, the two decisions, "How every slice runs"), then your own section, `## Slice {{N}} —
   {{TITLE}}`.
-- `docs/plans/ch05/03-slice-01-implementation-plan.md` — **the shape to match.** Read it for
+- `docs/plans/ch06/03-slice-01-implementation-plan.md` — **the shape to match.** Read it for
   structure and register as much as for content.
-- `docs/plans/ch05/01-messaging-core-strategy-plan.md` — reference points and idiom to copy.
+- `docs/plans/ch06/01-messaging-core-strategy-plan.md` — reference points and idiom to copy.
 - `CLAUDE.md`, and `docs/design/00-platform-conventions.md`, `02-messaging-service.md`,
   `06-frontend-spa.md`, `07-open-decisions-register.md`.
 - The shipped Slice 1 code, which is what you are extending: `src/services/messaging/messaging/`
@@ -267,7 +267,7 @@ filters that table's soft-delete column, which for `channels` is `archived_at`, 
 
 ## What you must not do
 
-- Do not write, edit or create any file other than `docs/plans/ch05/{{OUTPUT_PATH}}`.
+- Do not write, edit or create any file other than `docs/plans/ch06/{{OUTPUT_PATH}}`.
 - No production code, no `.feature` files, no design-doc edits, no changes to another plan. Your
   plan *says* what should be written back to a design doc; it does not write it back.
 - Never run `git add`, `git commit`, or open a PR.
@@ -305,7 +305,7 @@ Two slices need an extra line in their dispatch:
 - **Slice 7** — add: "This slice is documentation only. Your `## Work` has no backend or frontend
   package — it has the ADR, the register updates, the design-doc reflections and the README sweep.
   Its Verification is a docs check, not a test run. Before you specify anything, read the plans in
-  `docs/plans/ch05/` numbered 05–09 if they exist yet and note that decisions recorded in an
+  `docs/plans/ch06/` numbered 05–09 if they exist yet and note that decisions recorded in an
   earlier slice are **not** yours to record again."
 
 ---
@@ -317,8 +317,8 @@ Read the six returns. Then:
 1. Rule on every **Contract question** raised. You decide these — do not stall the run waiting for
    the user. Where a ruling would change a contract Slice 1 has already shipped, that one goes to
    the user instead.
-2. Amend `docs/plans/ch05/04-slice-contracts.md` in place with the new rulings, as a dated
-   amendment blockquote in ch05 style — `> **Amended <date>, after the planners returned.**` —
+2. Amend `docs/plans/ch06/04-slice-contracts.md` in place with the new rulings, as a dated
+   amendment blockquote in ch06 style — `> **Amended <date>, after the planners returned.**` —
    rather than rewriting history.
 3. Patch the affected plans yourself. Do not re-dispatch a planner for a one-line correction.
 4. Keep a list of every call you made and why. It goes in your final report.
@@ -332,10 +332,10 @@ edit. You apply the fixes.
 
 Give each the same preamble — "Six implementation plans for Slices 2–7 of the CollabHub messaging
 build have just been written in parallel by separate agents against
-`docs/plans/ch05/04-slice-contracts.md`. Review them on one lens only. Report findings as
+`docs/plans/ch06/04-slice-contracts.md`. Review them on one lens only. Report findings as
 `file:line — what is wrong — what it should say`. Edit nothing." — and then one of:
 
-- **Seams.** "Read all six plans (`docs/plans/ch05/05-…` through `10-…`) plus
+- **Seams.** "Read all six plans (`docs/plans/ch06/05-…` through `10-…`) plus
   `04-slice-contracts.md`. Find: two plans that contradict each other · two plans that both claim
   to create or own the same file, migration, test module or design-doc section · a file or
   behaviour that every plan assumes someone else builds · a slice that depends on something an
@@ -380,7 +380,7 @@ Then stop. Do not start building a slice. Do not write any `.feature` file.
   the user what changed.
 - **Ignore `docs/project/`.**
 - **This run changes nothing under `src/`, `tests/` or `docs/design/`.** It writes seven markdown
-  files in `docs/plans/ch05/` and nothing else. The plans *describe* the design-doc writebacks;
+  files in `docs/plans/ch06/` and nothing else. The plans *describe* the design-doc writebacks;
   each slice performs its own when it is built.
 - A 🔴 decision that would change something Slice 1 already shipped goes to the user, not to you.
 
@@ -406,7 +406,7 @@ Now the frontend Slice 1 code and the shared security module.
 
 I have the full picture. Writing Phase 1 — the frozen seams.
 
-*(wrote `docs/plans/ch05/04-slice-contracts.md` — 440 lines, thirteen rulings)*
+*(wrote `docs/plans/ch06/04-slice-contracts.md` — 440 lines, thirteen rulings)*
 
 Phase 1 is frozen. Dispatching all six planners now.
 
@@ -414,7 +414,7 @@ Phase 1 is frozen. Dispatching all six planners now.
 
 All six planners are running in parallel. Phase 1 is complete:
 
-**`docs/plans/ch05/04-slice-contracts.md`** — 13 rulings frozen. Beyond the eleven seams on the list, freezing them exposed two more that would otherwise have been answered three different ways each:
+**`docs/plans/ch06/04-slice-contracts.md`** — 13 rulings frozen. Beyond the eleven seams on the list, freezing them exposed two more that would otherwise have been answered three different ways each:
 
 - **Ruling 12** — doc 02 §3.1 marks message endpoints "channel member", but §3.1.1 (added in Slice 1) makes public channels workspace-visible, and *nothing in scope lets a user join a channel themselves*. Together those make Slice 3's own demo, and every Slice 5/6 scenario, unsatisfiable — Grace can see `#general` and never read a word in it. Ruled: **visibility gates reading and writing; membership gates administration.**
 - **Ruling 13** — the `Message` DTO, since S3 defines it and S4/S5/S6 all serialize it. Drops `reactions` (table not created), adds `version` (needed for optimistic concurrency).
@@ -528,9 +528,9 @@ All four verified — the fidelity reviewer is correct, including on six errors 
 
 *(patched `04-slice-contracts.md`: the `pytest.ini` filename, the false `features/chat` claim, `validate_body`'s missing `max_chars` parameter, and three mis-attributions of which planner said what — then Slice 6's `delete_message` shape, ack trace-id rule, `register_write_handlers` signature and typing payload; Slice 5's socket accessor, ruling-19 and ruling-20 writebacks and settled ack envelope; Slice 4's archive, visibility-guard and `validate_body` corrections; Slice 3's withdrawn env-var gap and shared `open_channel`; Slice 2's manual demo; Slice 7's Done sentence, `/components` claim and broken greps; then the two-stack verification blocks in four plans, rulings 22–24, and five drifted line citations)*
 
-*(final check: all seven files present, five required sections and one bolded **Done:** in each, no residual `{messageId, channelId}` contradiction, `register_write_handlers` signatures now agreeing across plans, no `"error":` ack key left, and `git status` showing only the seven untracked files under `docs/plans/ch05/`)*
+*(final check: all seven files present, five required sections and one bolded **Done:** in each, no residual `{messageId, channelId}` contradiction, `register_write_handlers` signatures now agreeing across plans, no `"error":` ack key left, and `git status` showing only the seven untracked files under `docs/plans/ch06/`)*
 
-All seven files verified: correct structure, no residual contradictions, and `git status` confirms nothing outside `docs/plans/ch05/` changed and nothing is staged or committed.
+All seven files verified: correct structure, no residual contradictions, and `git status` confirms nothing outside `docs/plans/ch06/` changed and nothing is staged or committed.
 
 ## Files written
 
@@ -646,4 +646,4 @@ source files than the other two reviewers combined.
 The nine subagents' own transcripts. Each planner and reviewer ran in its own context and reported
 back a summary of twenty lines or fewer; those returns are visible here only through what the
 coordinator says about them. The full contents of the seven documents are in the project repo under
-`docs/plans/ch05/` — this transcript quotes only ruling 12, which the session turns on.
+`docs/plans/ch06/` — this transcript quotes only ruling 12, which the session turns on.

@@ -49,9 +49,9 @@ subagents write the Gherkin; two more review it.
 Nothing below happens until you have read:
 
 - `CLAUDE.md` — the repo rules, and the Testing section describing the `tests/bdd` suite.
-- `docs/plans/ch05/02-messaging-core-delivery-plan.md` §"How every slice runs" — the seven-step
+- `docs/plans/ch06/02-messaging-core-delivery-plan.md` §"How every slice runs" — the seven-step
   protocol the 🛑 gate comes from.
-- `docs/plans/ch05/04-slice-contracts.md` — the frozen cross-slice rulings. **Ruling 6, "BDD
+- `docs/plans/ch06/04-slice-contracts.md` — the frozen cross-slice rulings. **Ruling 6, "BDD
   harness growth", is the one that governs this run**: it says which slice owns which feature
   file, and it is binding.
 - The five slice plans, specifically each one's `## How the slice runs` (the scenario titles and
@@ -84,12 +84,12 @@ Three facts about the harness that shape the whole run:
 
 | File | Written by |
 |---|---|
-| `docs/plans/ch05/gherkin/00-scenario-vocabulary.md` | You, in Phase 1 |
-| `docs/plans/ch05/gherkin/s2-channels.feature` · `s2-permissions.feature` | Writer 2 |
-| `docs/plans/ch05/gherkin/s3-messages.feature` | Writer 3 |
-| `docs/plans/ch05/gherkin/s5-realtime.feature` | Writer 5 |
-| `docs/plans/ch05/gherkin/s4-messages.feature` | Writer 4 |
-| `docs/plans/ch05/gherkin/s6-realtime.feature` | Writer 6 |
+| `docs/plans/ch06/gherkin/00-scenario-vocabulary.md` | You, in Phase 1 |
+| `docs/plans/ch06/gherkin/s2-channels.feature` · `s2-permissions.feature` | Writer 2 |
+| `docs/plans/ch06/gherkin/s3-messages.feature` | Writer 3 |
+| `docs/plans/ch06/gherkin/s5-realtime.feature` | Writer 5 |
+| `docs/plans/ch06/gherkin/s4-messages.feature` | Writer 4 |
+| `docs/plans/ch06/gherkin/s6-realtime.feature` | Writer 6 |
 | `tests/bdd/features/channels.feature` · `permissions.feature` · `messages.feature` · `realtime.feature` | You, in Phase 4 |
 
 The staging folder is new. Nothing else in the repo changes — no `src/`, no `docs/design/`, no
@@ -100,7 +100,7 @@ The staging folder is new. Nothing else in the repo changes — no `src/`, no `d
 ## Phase 1 — freeze the vocabulary
 
 Do this yourself, before dispatching anything. Write
-`docs/plans/ch05/gherkin/00-scenario-vocabulary.md`.
+`docs/plans/ch06/gherkin/00-scenario-vocabulary.md`.
 
 Five writers working blind will invent five ways to say "Ada opens the channel", and the step
 author downstream then has to reconcile them. This document is the answer. It is what
@@ -142,7 +142,7 @@ Rule on every item below.
    cross-user assertion has to put Grace's load *after* Ada's change or it asserts on a cached
    list. S2's plan says this; the rule holds for S3 and S4 too.
 
-Write it in the house style of the other ch05 documents: sentence-case title, `## Context` first,
+Write it in the house style of the other ch06 documents: sentence-case title, `## Context` first,
 `---` between sections, ~100-column wrap, `·` as an inline separator, 🔴🟡🟢 used the way the
 register uses them.
 
@@ -162,7 +162,7 @@ Use this prompt for each, substituting the placeholders:
 You are writing the Gherkin scenarios for ONE slice of the CollabHub messaging build: Slice
 {{N}}, "{{TITLE}}".
 
-Write them to `docs/plans/ch05/gherkin/{{OUTPUT_PATH}}` and to no other file. Everything else in
+Write them to `docs/plans/ch06/gherkin/{{OUTPUT_PATH}}` and to no other file. Everything else in
 the repository is read-only to you.
 
 ## What this is
@@ -176,13 +176,13 @@ You are writing a **staged draft**. The coordinator consolidates it into
 
 ## Read
 
-- `docs/plans/ch05/gherkin/00-scenario-vocabulary.md` — **the frozen shared vocabulary.
+- `docs/plans/ch06/gherkin/00-scenario-vocabulary.md` — **the frozen shared vocabulary.
   Binding.** Where it rules on something, follow it; do not re-decide it.
-- `docs/plans/ch05/{{PLAN}}` — your slice's plan. `## How the slice runs` has your scenario
+- `docs/plans/ch06/{{PLAN}}` — your slice's plan. `## How the slice runs` has your scenario
   titles and the paragraph naming what deliberately stays at integration level. `### A.` has the
   page-object methods your scenarios imply — read it to know what the harness will be able to
   do, not to describe it.
-- `docs/plans/ch05/04-slice-contracts.md` ruling 6 — which feature file is yours.
+- `docs/plans/ch06/04-slice-contracts.md` ruling 6 — which feature file is yours.
 - `tests/bdd/features/channels.feature` — **the shape to match**, for register and rhythm as
   much as for content.
 - `tests/bdd/steps/test_channel_steps.py` and `tests/bdd/pages/chat_page.py` — what the suite
@@ -257,7 +257,7 @@ spellings of one step.
 Same prompt as Phase 2, with this replacing the "What to write" section:
 
 > You are **extending** a file another slice created. Read
-> `docs/plans/ch05/gherkin/{{UPSTREAM}}` first and match its `Background`, its step phrasing and
+> `docs/plans/ch06/gherkin/{{UPSTREAM}}` first and match its `Background`, its step phrasing and
 > its use of Ada and Grace. You are adding scenarios to one file, not writing a second one.
 >
 > Your staged draft carries a `Feature: {{FEATURE_NAME}}` line matching the target so it parses
@@ -295,7 +295,7 @@ Then reconcile:
    run waiting for the user. A ruling that would change something Slice 1 has already shipped
    goes to the user instead.
 3. **Amend `00-scenario-vocabulary.md` in place** with any new ruling, as a dated amendment
-   blockquote in ch05 style — `> **Amended <date>, after the writers returned.**` — rather than
+   blockquote in ch06 style — `> **Amended <date>, after the writers returned.**` — rather than
    rewriting history.
 4. **The staged files stay where they are.** They are the audit trail of who wrote what, not
    scratch to be cleaned up.
@@ -309,11 +309,11 @@ You apply the fixes.
 
 Give each the same preamble — "The Gherkin for Slices 2–6 of the CollabHub messaging build has
 just been written in parallel by separate agents against
-`docs/plans/ch05/gherkin/00-scenario-vocabulary.md` and consolidated into
+`docs/plans/ch06/gherkin/00-scenario-vocabulary.md` and consolidated into
 `tests/bdd/features/`. Review it on one lens only. Report findings as
 `file:line — what is wrong — what it should say`. Edit nothing." — and then one of:
 
-- **Coverage and fidelity.** "Open each of the five plans (`docs/plans/ch05/05-…` through
+- **Coverage and fidelity.** "Open each of the five plans (`docs/plans/ch06/05-…` through
   `09-…`) at its `## How the slice runs` section and check the four consolidated feature files
   against it. Every scenario title the plans list appears exactly once · nothing appears twice ·
   no scenario was invented that no plan asks for · nothing a plan explicitly sent to integration
@@ -375,7 +375,7 @@ Write no step definitions, no page objects, no service code. Do not start buildi
 - **Never commit.** Stage nothing, run no `git commit`, open no PR. Leave the tree dirty and
   tell the user what changed.
 - **Ignore `docs/project/`.**
-- **This run touches `docs/plans/ch05/gherkin/` and `tests/bdd/features/` and nothing else.** No
+- **This run touches `docs/plans/ch06/gherkin/` and `tests/bdd/features/` and nothing else.** No
   `src/`, no `docs/design/`, no `pyproject.toml`, no `conftest.py`, no `pages/`, no `steps/`.
 - **Slice 7 has no Gherkin and no writer** — ruling 6 gives it three em-dashes. Every scenario
   in its scope was written by Slices 2–6.
@@ -388,7 +388,7 @@ Write no step definitions, no page objects, no service code. Do not start buildi
 I'll start by reading everything the run depends on.
 
 *(read `CLAUDE.md` and the 662-line `04-slice-contracts.md` in full, and listed `tests/bdd/` and
-`docs/plans/ch05/`, finding the six slice plans and one existing feature file)*
+`docs/plans/ch06/`, finding the six slice plans and one existing feature file)*
 
 *(read all five files of the existing BDD suite — `channels.feature` at 73 lines, the step module,
 both page objects and `conftest.py` — the last of which explains why sign-in happens once per user
@@ -404,7 +404,7 @@ seeding 60 messages straight into Postgres)*
 
 Now I have what I need. Writing the frozen vocabulary.
 
-*(wrote `docs/plans/ch05/gherkin/00-scenario-vocabulary.md` — eleven rulings, ~230 lines: personas
+*(wrote `docs/plans/ch06/gherkin/00-scenario-vocabulary.md` — eleven rulings, ~230 lines: personas
 fixed to Ada and Grace, the eleven existing step phrases quoted verbatim with the loose
 `_COMPLAINTS` matching explained, one `Background` and one narrative paragraph per file owned by
 the creating slice, `@bdd` only, outlines where the rule is a table of cases, browser-observable
@@ -639,10 +639,10 @@ dirty, nothing committed.
 
 | File | Source |
 |---|---|
-| `docs/plans/ch05/gherkin/00-scenario-vocabulary.md` | me, Phase 1 + two dated amendments |
-| `docs/plans/ch05/gherkin/s2-channels.feature` · `s2-permissions.feature` | Writer 2 |
-| `docs/plans/ch05/gherkin/s3-messages.feature` · `s4-messages.feature` | Writers 3, 4 |
-| `docs/plans/ch05/gherkin/s5-realtime.feature` · `s6-realtime.feature` | Writers 5, 6 |
+| `docs/plans/ch06/gherkin/00-scenario-vocabulary.md` | me, Phase 1 + two dated amendments |
+| `docs/plans/ch06/gherkin/s2-channels.feature` · `s2-permissions.feature` | Writer 2 |
+| `docs/plans/ch06/gherkin/s3-messages.feature` · `s4-messages.feature` | Writers 3, 4 |
+| `docs/plans/ch06/gherkin/s5-realtime.feature` · `s6-realtime.feature` | Writers 5, 6 |
 | **`tests/bdd/features/channels.feature`** | modified — S2's 4 appended, narrative extended |
 | **`tests/bdd/features/permissions.feature`** · **`messages.feature`** · **`realtime.feature`** | new — consolidated by me |
 
@@ -1032,7 +1032,7 @@ reuses `When Grace opens the "{name}" channel`, which the file already had;
 Scenario count is unchanged at 34, and the tags are untouched, so this stays inside S2's existing
 `@pending @s2` batch.
 
-**`docs/plans/ch05/06-slice-03-implementation-plan.md`** — two edits:
+**`docs/plans/ch06/06-slice-03-implementation-plan.md`** — two edits:
 
 - The integration list in "How the slice runs" now names the positive private case, with a paragraph
   explaining *why* it isn't Gherkin — so the next reader doesn't re-open it.
@@ -1040,7 +1040,7 @@ Scenario count is unchanged at 34, and the tags are untouched, so this stays ins
   and returns history", sitting directly beside the 404 for a non-member that was already specified.
   It's flagged as the only place that rule is proved.
 
-**`docs/plans/ch05/05-slice-02-implementation-plan.md`** — §A notes that the new step is a step
+**`docs/plans/ch06/05-slice-02-implementation-plan.md`** — §A notes that the new step is a step
 definition over an existing page-object method, not a new method, and says why the scenario grew.
 
 **`gherkin/00-scenario-vocabulary.md`** — rulings 31 and 32 record the decision and the reasoning,

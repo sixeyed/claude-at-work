@@ -15,7 +15,7 @@ reported 40,000 and 77,000 of their own.
 
 The session ran in plan mode, on a cleared context.
 
-This follows on from the Slice 1 work in `docs/plans/ch05/` — the delivery plan that cuts
+This follows on from the Slice 1 work in `docs/plans/ch06/` — the delivery plan that cuts
 messaging into seven slices, and the Slice 1 implementation plan that was built and accepted.
 Slices 2–7 have no plans yet, and this session writes the prompt that will generate them.
 
@@ -23,15 +23,15 @@ Slices 2–7 have no plans yet, and this session writes the prompt that will gen
 
 ## User
 
-we have implemented slice 1 (docs/plans/ch05). i want to build the remaining implementation plans  in parallel. write a prompt in docs/plans/ch05/prompts/parallel-slices.md that will use subagents effectively to build the plans, coordinating through a central agent
+we have implemented slice 1 (docs/plans/ch06). i want to build the remaining implementation plans  in parallel. write a prompt in docs/plans/ch06/prompts/parallel-slices.md that will use subagents effectively to build the plans, coordinating through a central agent
 
 ---
 
 ## Assistant
 
-I'll start by exploring the ch05 plans directory to understand what exists and what needs building.
+I'll start by exploring the ch06 plans directory to understand what exists and what needs building.
 
-*(dispatched two Explore subagents in parallel — one to map `docs/plans/ch05/` and report the exact shape of the Slice 1 plan so other plans could be made to match it, one to look for an existing prompt-file convention anywhere in the repo and to read the superpowers `writing-plans`, `dispatching-parallel-agents`, `subagent-driven-development` and `brainstorming` skills off disk. While they ran: read `02-messaging-core-delivery-plan.md` and `03-slice-01-implementation-plan.md` in full; listed `docs/plans/`, which holds only `ch05` with three files and no `prompts/` folder; ran `wc -l` over the plan set and the design docs and listed `tests/bdd/`; read `docs/design/07-open-decisions-register.md` — D8d, D16, D28 all still 🔴; skimmed the strategy plan's reference points; grepped the section headings of docs 02 and 06, confirming Slice 1's writebacks had already landed as §3.1.1 Channel visibility, §3.1.2 Channel names and §3.1.3 DTOs; read `tests/bdd/conftest.py` and `pages/chat_page.py` in full, which is where `MESSAGING_TABLES = "channel_members, channels"` lives; and read doc 02 §3.2, the Socket.IO event tables)*
+*(dispatched two Explore subagents in parallel — one to map `docs/plans/ch06/` and report the exact shape of the Slice 1 plan so other plans could be made to match it, one to look for an existing prompt-file convention anywhere in the repo and to read the superpowers `writing-plans`, `dispatching-parallel-agents`, `subagent-driven-development` and `brainstorming` skills off disk. While they ran: read `02-messaging-core-delivery-plan.md` and `03-slice-01-implementation-plan.md` in full; listed `docs/plans/`, which holds only `ch06` with three files and no `prompts/` folder; ran `wc -l` over the plan set and the design docs and listed `tests/bdd/`; read `docs/design/07-open-decisions-register.md` — D8d, D16, D28 all still 🔴; skimmed the strategy plan's reference points; grepped the section headings of docs 02 and 06, confirming Slice 1's writebacks had already landed as §3.1.1 Channel visibility, §3.1.2 Channel names and §3.1.3 DTOs; read `tests/bdd/conftest.py` and `pages/chat_page.py` in full, which is where `MESSAGING_TABLES = "channel_members, channels"` lives; and read doc 02 §3.2, the Socket.IO event tables)*
 
 **How much should the parallel run cover in one go?**
 
@@ -62,13 +62,13 @@ I'll start by exploring the ch05 plans directory to understand what exists and w
 
 ## Assistant
 
-*(both Explore subagents returned while the questions were open. The first came back with the Slice 1 plan's exact heading tree — `## Context` → `## Gaps closed` with nine numbered sub-sections → `## How the slice runs` → `## Work` in lettered packages → `## Verification` — and the observation that the plan contains no Gherkin at all, only scenario titles separated by `·`. The second confirmed there is no prompt-file convention anywhere in the repo, that `docs/superpowers/specs/` is empty, and that the ch05 plans deliberately do **not** follow the superpowers `writing-plans` template — no checkboxes, no `**Goal:**` block — being prose-and-tables design documents instead)*
+*(both Explore subagents returned while the questions were open. The first came back with the Slice 1 plan's exact heading tree — `## Context` → `## Gaps closed` with nine numbered sub-sections → `## How the slice runs` → `## Work` in lettered packages → `## Verification` — and the observation that the plan contains no Gherkin at all, only scenario titles separated by `·`. The second confirmed there is no prompt-file convention anywhere in the repo, that `docs/superpowers/specs/` is empty, and that the ch06 plans deliberately do **not** follow the superpowers `writing-plans` template — no checkboxes, no `**Goal:**` block — being prose-and-tables design documents instead)*
 
 Both explorers are back and I have your four answers. Writing the plan.
 
 *(wrote the plan file)*
 
-> `docs/plans/ch05/prompts/parallel-slices.md` … The failure mode of fanning out is
+> `docs/plans/ch06/prompts/parallel-slices.md` … The failure mode of fanning out is
 > equally real, and it is the whole design problem here. Slice 1's plan earned its keep by
 > **validating the delivery plan against the design docs and closing nine gaps**. Six planners
 > doing that independently will close the *same* gap two different ways at the slice seams —
@@ -104,7 +104,7 @@ Nested fences need fixing — the planner-prompt block contains its own fence.
 
 ## Assistant
 
-Written: `docs/plans/ch05/prompts/parallel-slices.md` (369 lines). Nothing else in the repo changed; the tree is dirty and uncommitted.
+Written: `docs/plans/ch06/prompts/parallel-slices.md` (369 lines). Nothing else in the repo changed; the tree is dirty and uncommitted.
 
 **What it does.** The pasteable block turns the main session into a coordinator that runs nine subagents in two waves — six planners, then three reviewers — and produces seven files: `04-slice-contracts.md` plus `05-`…`10-slice-0N-implementation-plan.md` for Slices 2 through 7.
 
@@ -112,7 +112,7 @@ Written: `docs/plans/ch05/prompts/parallel-slices.md` (369 lines). Nothing else 
 
 **Parallel safety** comes from disjoint outputs — one planner, one file, read-only everywhere else. No worktrees, and the prompt says why not.
 
-**The escalation rule** matches your call: a planner that hits something crossing a seam records a bolded **Contract question** and returns it rather than deciding; the coordinator rules in Phase 3, amends the contracts doc with a dated blockquote in ch05 style, and patches the plans itself. The one carve-out is anything that would change a contract Slice 1 already shipped — that goes to you.
+**The escalation rule** matches your call: a planner that hits something crossing a seam records a bolded **Contract question** and returns it rather than deciding; the coordinator rules in Phase 3, amends the contracts doc with a dated blockquote in ch06 style, and patches the plans itself. The one carve-out is anything that would change a contract Slice 1 already shipped — that goes to you.
 
 **The three reviewers** get distinct lenses, not three passes of the same one: seams (contradictions, double ownership, orphaned files), fidelity (every `§` reference, helper and line number checked against the actual file — the lens for confident invention), and executability (invented patterns where `auth/` already has one, placeholders, undefined types).
 
@@ -142,7 +142,7 @@ Loaded — `extract-transcript` from the `manning-book-workflow` plugin.
 Two things I checked while loading:
 
 - The destination for this work is `chapters/ch05/conversations/`, which currently holds `01-project-scaffold.md`, `02-auth-mvp.md`, `03-full-auth-implementation.md` — so this session would be `04-`.
-- That numbering doesn't match the ch05 *plans* sequence in this repo. The ch05 plan set has already produced sessions for the strategy plan, the delivery plan, the slice-1 Gherkin and the slice-1 build, none of which appear in `conversations/` — so either those weren't exported, or they went to a different chapter. Worth settling before I claim a number.
+- That numbering doesn't match the ch06 *plans* sequence in this repo. The ch06 plan set has already produced sessions for the strategy plan, the delivery plan, the slice-1 Gherkin and the slice-1 build, none of which appear in `conversations/` — so either those weren't exported, or they went to a different chapter. Worth settling before I claim a number.
 
 ---
 
