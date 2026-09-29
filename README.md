@@ -96,6 +96,21 @@ Eight sessions: a hierarchy of plans from strategy to delivery to implementation
 
 The plans are project documents so they're in the project repo under `docs/plans/ch06/` — the [chapter README](chapters/ch06/README.md) lists them.
 
+### [`chapters/ch07`](chapters/ch07) — Developing in parallel with high quality
+
+Fifteen sessions: quality gates as hooks, three agents in their own worktrees, TDD, then a test pyramid built by three more agents under remote control — and a final stretch checking whether any of it holds up.
+
+| File | What it is |
+| --- | --- |
+| [`conversations/01-quality-gates.md`](chapters/ch07/conversations/01-quality-gates.md) | The lint and security hooks, and what Claude did when my deliberately bad function failed them |
+| [`conversations/02`](chapters/ch07/conversations/02-search.md) – [`04`](chapters/ch07/conversations/04-scripts.md) | Search, the Helm chart and the build scripts — three sessions running in parallel worktrees, each ending in a PR |
+| [`conversations/05-tdd.md`](chapters/ch07/conversations/05-tdd.md) | Read markers built red-green-refactor, with a stop at red for review |
+| [`conversations/06`](chapters/ch07/conversations/06-test-framework.md) – [`10`](chapters/ch07/conversations/10-test-review.md) | The test framework, the three layers built in parallel under remote control, then a review that found seven real bugs |
+| [`conversations/11`](chapters/ch07/conversations/11-debugging-prep.md) – [`12`](chapters/ch07/conversations/12-debugging.md) | A planted bug and the agent that found it — a debugging exercise that was cut from the final chapter, kept here as a bonus |
+| [`conversations/13`](chapters/ch07/conversations/13-reactions.md) – [`15`](chapters/ch07/conversations/15-test-report.md) | *Your turn*: a new feature, portable deployment, and a test report |
+
+The hooks, plans and test report are in the project repo — the [chapter README](chapters/ch07/README.md) lists them, along with the tags for each stage.
+
 ## A note on model versions
 
 The transcripts here are from the models available when I wrote each chapter, and they're named in the book alongside each response. Models are updated every few months and each generation is more accurate and more capable — so if you run the same prompts you will definitely get different output from mine, and probably *better* output. Where a response in the book looks dated, that's the platform moving on.
