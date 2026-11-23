@@ -111,6 +111,35 @@ Fifteen sessions: quality gates as hooks, three agents in their own worktrees, T
 
 The hooks, plans and test report are in the project repo — the [chapter README](chapters/ch07/README.md) lists them, along with the tags for each stage.
 
+### [`chapters/ch08`](chapters/ch08) — Building out your AI team
+
+Nine sessions: six custom agents and a workflow script that make up an AI delivery team, two rounds of review to tune their prompts, models and effort, then the team set to work on three features at once.
+
+| File | What it is |
+| --- | --- |
+| [`agents`](chapters/ch08/agents) | The recalcitrant agent from section 8.1, and one that's on strike. Run them with `claude --plugin-dir ./chapters/ch08 --agent recalcitrant-ro` |
+| [`agent-output`](chapters/ch08/agent-output) | Three plans the plan-writer produced from the same issue. These were the input for building the plan-reviewer |
+| [`issues`](chapters/ch08/issues) | Issue 1 before and after the `issue-writer` skill. Compare the two |
+| [`conversations/01`](chapters/ch08/conversations/01-plan-writer-agent.md) – [`03`](chapters/ch08/conversations/03-code-pair.md) | Building the team one pair at a time: plan, test and code, ending with the `issue-writer` skill |
+| [`conversations/04`](chapters/ch08/conversations/04-team-review-1.md) – [`05`](chapters/ch08/conversations/05-team-review-2.md) | Fable reviews the team: the prompts first, then fourteen builds trying different models and effort levels |
+| [`conversations/06`](chapters/ch08/conversations/06-issue-002-spec.md) – [`09`](chapters/ch08/conversations/09-feature-merge.md) | *Your turn*: three issues written with the skill, and merging what the teams built |
+
+The agent prompts, the workflow script and the issues are in the project repo. The [chapter README](chapters/ch08/README.md) lists them, along with the tags for each stage.
+
+### [`chapters/ch09`](chapters/ch09) — Scaling with a software factory
+
+Nine sessions: preview environments, an acceptance-reviewer agent, and the whole delivery process moved to GitHub. Issues go in, and a PR with proofs, a live preview and a Slack message comes out.
+
+| File | What it is |
+| --- | --- |
+| [`conversations/01-preview-deployment.md`](chapters/ch09/conversations/01-preview-deployment.md) | Preview environments in k3d with Cloudflare tunnels, delivered by the AI team |
+| [`conversations/02-acceptance-review-agent.md`](chapters/ch09/conversations/02-acceptance-review-agent.md) | The seventh team member, which tests the build on the preview and writes the proofs |
+| [`conversations/03`](chapters/ch09/conversations/03-issue-writer-gh.md) – [`05`](chapters/ch09/conversations/05-first-gh-issue-v2.md) | A pluggable backend for issues, and the `issue-writer` skill writing real GitHub issues |
+| [`conversations/06`](chapters/ch09/conversations/06-deliver-script-to-gh.md) – [`07`](chapters/ch09/conversations/07-gh-actions-workflow.md) | The delivery script ported to Python, then run in GitHub Actions |
+| [`conversations/08`](chapters/ch09/conversations/08-delivery-pr.md) – [`09`](chapters/ch09/conversations/09-github-actions-workflow.md) | PRs with proofs, held previews and Slack, then the first delivery in the real repo |
+
+The factory's first delivery in the project repo is [PR #7](https://github.com/sixeyed/claude-at-work-project/pull/7), with the full review pack. The [chapter README](chapters/ch09/README.md) lists the workflows and docs, along with the tags for each stage.
+
 ## A note on model versions
 
 The transcripts here are from the models available when I wrote each chapter, and they're named in the book alongside each response. Models are updated every few months and each generation is more accurate and more capable — so if you run the same prompts you will definitely get different output from mine, and probably *better* output. Where a response in the book looks dated, that's the platform moving on.
